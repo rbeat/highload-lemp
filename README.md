@@ -1,6 +1,6 @@
 # Highload LEMP Installation
 
-This bash script will install LEMP stack on your Debian 11 and configure it to maximize its performance of website serving.
+This bash script will install LEMP stack on your server and configure it to maximize its performance of website serving.
 
 ## Software 
 * NGINX 1.26.1 with fresh ngx-brotli
