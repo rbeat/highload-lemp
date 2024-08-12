@@ -34,8 +34,14 @@ apt install -y -q zip unzip fail2ban htop sqlite3 nload mlocate nano memcached s
 check_exit_code 3
 
 echo_task 4/40 "Install PHP 8.3 and necessary extensions"
+wget https://packages.sury.org/php/apt.gpg -O /etc/apt/trusted.gpg.d/sury-php.gpg
+check_exit_code 4.1
+sh -c 'echo "deb [signed-by=/etc/apt/trusted.gpg.d/sury-php.gpg] https://packages.sury.org/php/ $(lsb_release -sc) main" > /etc/apt/sources.list.d/php.list'
+check_exit_code 4.2
+apt update -y
+check_exit_code 4.3
 apt install -y -q php8.3 php8.3-curl php8.3-fpm php8.3-gd php8.3-mbstring php8.3-opcache php8.3-xml php8.3-sqlite3 php8.3-mysql php-imagick
-check_exit_code 4
+check_exit_code 4.4
 
 echo_task 5/40 "Create backup directories"
 now=$(date +"%Y-%m-%d_%H-%M-%S")
