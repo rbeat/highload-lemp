@@ -80,7 +80,7 @@ apt install -y -q nginx=1.26.1-1~bullseye
 check_exit_code 6
 
 echo_task 13/40 "Prepare for NGINX Brotli Compilation"
-apt install -y cmake build-essential libssl-dev libpcre3 libpcre3-dev
+apt install -y cmake build-essential libssl-dev libpcre3 libpcre3-dev git zlib1g-dev
 check_exit_code 13
 
 
