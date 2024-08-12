@@ -95,7 +95,7 @@ check_exit_code 16.1
 echo_task 17/40 "Create default site configuration for NGINX"
 mkdir -p /etc/nginx/sites-enabled
 mkdir -p /etc/nginx/sites-available
-wget -O /etc/nginx/sites-available/default.conf https://raw.githubusercontent.com/rbeat/highload-lemp/master/default.conf
+wget -O /etc/nginx/sites-available/default.conf https://raw.githubusercontent.com/rbeat/highload-lemp/debian-11/default.conf
 ln -s /etc/nginx/sites-available/default.conf /etc/nginx/sites-enabled/default.conf
 check_exit_code 17
 
@@ -108,7 +108,7 @@ echo -e '# regex to split $uri to $fastcgi_script_name and $fastcgi_path\nfastcg
 check_exit_code 19
 
 echo_task 20/40 "Create nginx.conf"
-wget -O /etc/nginx/nginx.conf https://raw.githubusercontent.com/rbeat/highload-lemp/master/nginx.conf
+wget -O /etc/nginx/nginx.conf https://raw.githubusercontent.com/rbeat/highload-lemp/debian-11/nginx.conf
 check_exit_code 20
 
 echo_task 21/40 "Tweak memcached configuration"
@@ -262,7 +262,7 @@ rm -rf /tmp/build
 mkdir -p /etc/nginx/sites-enabled
 mkdir -p /etc/nginx/sites-available
 if [ ! -f /etc/nginx/sites-enabled/default.conf ]; then
-  wget -O /etc/nginx/sites-available/default.conf https://raw.githubusercontent.com/rbeat/highload-lemp/master/default.conf
+  wget -O /etc/nginx/sites-available/default.conf https://raw.githubusercontent.com/rbeat/highload-lemp/debian-11/default.conf
   ln -s /etc/nginx/sites-available/default.conf /etc/nginx/sites-enabled/default.conf
 fi
 
